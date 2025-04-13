@@ -1,2 +1,7 @@
-package com.algostyle.backend.controller;public class WsChatMessageType {
+package com.algostyle.backend.controller;
+
+public enum WsChatMessageType {
+    JOIN,
+    LEAVE,
+    CHAT
 }
