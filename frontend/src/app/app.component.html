@@ -1,5 +1,59 @@
-<div id="username-page">
+<!-- si l'utilisateur n'est pas encore connecté, 
+on lui affiche une page pour saisir son username avant
+de commencer le chat -->
+<div *ngIf="!isConnected" id="username-page">
   <div>
-    
+    <h1>Tapez votre nom d'utilisateur pour joindre la salle de discussion</h1>
+
+    <form (ngSubmit)="connect()">
+      <div>
+        <input [(ngModel)]="username" type="text" name="username" id="name" placeholder="entrez votre nom d'utilisateur">
+      </div>
+
+      <div>
+        <button type="submit">Commencer le chat</button>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+
+
+<!-- si l'utilisateur est connecté avec succès, alors on lui donne
+accès à la salle de discussion (chat) => afficher l'interface du chat -->
+
+<div *ngIf="isConnected">
+  <div>
+    <div>
+      <h2>Bienvenue dans la salle du chat</h2>
+    </div>
+
+    <div>
+      {{connectingMessage}}
+    </div>
+
+    <!-- afficher la liste des message -->
+     <ul>
+      <li *ngFor="let message of messages">
+        <span *ngIf="message.type=='CHAT'">{{message.sender}}</span>
+        <p>{{message.content}}</p>
+      </li>
+     </ul>
+
+
+     <!-- le formulaire suivant est réservé pour l'écriture d'un nouvel message
+     et un bouton pour l'envoyer
+
+     Lorsqu'on soumit ce formulaire, on fait appel à la methode sendMessage() -->
+     <form (ngSubmit)="sendMessage()">
+      <div>
+        <div>
+          <input [(ngModel)]="message" name="message" type="text" id="message" placeholder="écrire un message ...">
+          <button type="submit">Envoyer</button>
+        </div>
+      </div>
+     </form>
+
   </div>
 </div>
