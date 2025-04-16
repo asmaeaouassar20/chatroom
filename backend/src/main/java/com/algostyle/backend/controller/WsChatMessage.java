@@ -1,11 +1,5 @@
 package com.algostyle.backend.controller;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 
 public class WsChatMessage {
     private String sender;
