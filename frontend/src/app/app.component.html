@@ -2,15 +2,15 @@
 on lui affiche une page pour saisir son username avant
 de commencer le chat -->
 <div *ngIf="!isConnected" id="username-page">
-  <div>
+  <div class="username-page-container">
     <h1>Tapez votre nom d'utilisateur pour joindre la salle de discussion</h1>
 
     <form (ngSubmit)="connect()">
-      <div>
-        <input [(ngModel)]="username" type="text" name="username" id="name" placeholder="entrez votre nom d'utilisateur">
+      <div class="form-group">
+        <input [(ngModel)]="username" type="text" name="username" id="name" placeholder="entrez votre nom d'utilisateur" class="form-control">
       </div>
 
-      <div>
+      <div class="form-group">
         <button type="submit">Commencer le chat</button>
       </div>
     </form>
@@ -23,7 +23,7 @@ de commencer le chat -->
 <!-- si l'utilisateur est connecté avec succès, alors on lui donne
 accès à la salle de discussion (chat) => afficher l'interface du chat -->
 
-<div *ngIf="isConnected">
+<div *ngIf="isConnected" id="chatroom">
   <div>
     <div>
       <h2>Bienvenue dans la salle du chat</h2>

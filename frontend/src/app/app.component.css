@@ -1,0 +1,70 @@
+.form-control{
+    width: 100%;
+    min-height: 38px;
+    font-size: 15px;
+    border: 1px solid #c8c8c8;
+}
+.form-group{
+    margin-bottom: 15px;
+}
+input{
+    padding-left: 10px;
+    outline: none;
+}
+
+
+
+button{
+    font-size: 14px;
+    line-height: 100%; /* Définir la hauteur de ligne de l'élément. Cela signifie que la hauteur sera égale à la taille de police actuelle - C'est utile pour éviter un espacement vertical excessif*/
+    white-space: nowrap; /* --> C'est une propritété qui contrôle la façon dont le texte est géré en terme de retour à la ligne
+                            --> Empêcher le texte de passer automatiquement à la ligne suivante 
+                            --> Le texte retsera sur une seule ligne jusqu'à ce qu'un <br> soit rencontré
+                            */
+    vertical-align: middle; /*
+                                --> Contrôler m'alignement vertical de l'élément par rapport à son parent ou à la ligne de texte
+                                --> aligner l'élément au milieu verticalement par rapport à son contexte
+                                --> SOuvent utilisé pour center verticalement des éléments inline ou inline-block
+                            */
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+
+#username-page{
+    text-align: center;
+}
+.username-page-container{
+    width: 100%;
+}
+
+
+
+
+
+
+
+#chatroom{
+    background-color: green;
+}
+
+#chatroom ul{
+    background-color: red;
+    list-style-type: none; /*Supprimer les puces/marqueurs devant les éléments de liste*/
+
+    /*
+    ----- Gestion du débordement (contenu trop grand pour le conteneur ) -----
+    > 'auto' signifie que les barres de défilement apparaîtront si nécessaire
+    > 'overflow-y : scroll ' force spécifiquement la barre de défilement verticale
+    */
+    /* overflow: auto;
+    overflow-y: scroll; */
+
+
+    /*
+    --------  Hauteur calculée dynamiquement  ----------
+    > prend 100% de la hauteur disponible
+    > Soustrait 150px  (pour laisser de la place)
+    */
+    height: calc(100%-150px);
+}
