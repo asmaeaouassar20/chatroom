@@ -42,7 +42,7 @@ public class WsChatController {
 
         // Stocker le nom d'utilisateur dans les attributs de session WebSocket
         headerAccessor.getSessionAttributes().put("username",msg.getSender());
-        System.out.println("user joined : "+msg.getSender());
+        System.out.println("user joined : "+msg.getSender() + " - type: "+msg.getType());
 
         //Retourner le message pour notifier tous les clients
         // Broadcast the user join event to all subscribers on the "/topic/chat" topic
