@@ -22,7 +22,7 @@ export class AppComponent implements OnInit{
     console.log('AppComponnet constructor called');
   }
 
-
+ 
   ngOnInit(): void {
       console.log('AppComponent ngOnInit called');
 
@@ -82,7 +82,7 @@ export class AppComponent implements OnInit{
    *  -> Tout en évitant les couleurs aléatoires qui changeraient à chaque affichage
    */
 
-  getAvatar(sender:string):string{
+  getAvatarColor(sender:string):string{
     // Array of colors to choose from
     const colors = ['#2196F3', '#32c787', '#00BCD4', '#ff5652', '#ffc107', '#ff85af', '#FF9800', '#39bbb0'];
 

@@ -1,70 +1,104 @@
-.form-control{
-    width: 100%;
-    min-height: 38px;
-    font-size: 15px;
-    border: 1px solid #c8c8c8;
-}
-.form-group{
-    margin-bottom: 15px;
-}
-input{
-    padding-left: 10px;
-    outline: none;
-}
-
-
-
-button{
-    font-size: 14px;
-    line-height: 100%; /* Définir la hauteur de ligne de l'élément. Cela signifie que la hauteur sera égale à la taille de police actuelle - C'est utile pour éviter un espacement vertical excessif*/
-    white-space: nowrap; /* --> C'est une propritété qui contrôle la façon dont le texte est géré en terme de retour à la ligne
-                            --> Empêcher le texte de passer automatiquement à la ligne suivante 
-                            --> Le texte retsera sur une seule ligne jusqu'à ce qu'un <br> soit rencontré
-                            */
-    vertical-align: middle; /*
-                                --> Contrôler m'alignement vertical de l'élément par rapport à son parent ou à la ligne de texte
-                                --> aligner l'élément au milieu verticalement par rapport à son contexte
-                                --> SOuvent utilisé pour center verticalement des éléments inline ou inline-block
-                            */
-    border-radius: 2px;
-    cursor: pointer;
-}
-
-
-#username-page{
+h1{
     text-align: center;
+    margin: 18px auto;
+    padding: 40px;
 }
-.username-page-container{
-    width: 100%;
+.content{ 
+    width: 80%;
+    padding: 38px;
+    border: 2px solid #FF0077;
+    border-radius: 20px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.chat{
+   text-align: center;
+}
+i{
+    font-size: 50px;
+}
+.start-chat{
+    display: flex ;
+}
+.start-chat button{
+    border: 0;
+    background: none;
+    position: relative;
+}
+.start-chat-label{
+    background-color: rgb(255, 0, 119);
+    box-shadow: 3px 4px 10px rgba(255, 0, 0, 0.825);
+    border-radius: 10px;
+    position: absolute;
+    top: -38px;
+    left: -38px;
+    font-size: 20px;
+    padding: 20px;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0;
+    transition: opacity .8s ease;
+}
+.start-chat button:hover .start-chat-label{
+    opacity: 1;
 }
 
 
 
 
-
-
-
-#chatroom{
-    background-color: green;
-}
-
-#chatroom ul{
-    background-color: red;
-    list-style-type: none; /*Supprimer les puces/marqueurs devant les éléments de liste*/
-
-    /*
-    ----- Gestion du débordement (contenu trop grand pour le conteneur ) -----
-    > 'auto' signifie que les barres de défilement apparaîtront si nécessaire
-    > 'overflow-y : scroll ' force spécifiquement la barre de défilement verticale
-    */
+.chat-echange ul{
+    list-style-type: none;
     /* overflow: auto;
-    overflow-y: scroll; */
+    overflow-y: scroll;
+    width: calc(100%-85px); */
+}
+.chat-echange ul .infos{
+    display: flex;
+    justify-content: start ;
+    align-items: center; 
+}
+
+.chat-echange ul .chat-message{
+    text-align: start;
+    background-color: rgb(234, 249, 253);
+    border-radius: 20px;
+    margin: 20px auto;
+}
+.chat-echange ul .chat-message i{
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 10px;
+}
+.chat-echange ul span{
+    font-weight: 900;
+    font-size: 14px;
+}
+.chat-echange ul p{
+    left: 100px;
+    top: 50px;
+    word-wrap: break-word;
+    padding: 20px;
+}
 
 
-    /*
-    --------  Hauteur calculée dynamiquement  ----------
-    > prend 100% de la hauteur disponible
-    > Soustrait 150px  (pour laisser de la place)
-    */
-    height: calc(100%-150px);
+
+.event-message{
+    background-color: rgba(255, 255, 185, 0.411);
+    font-size: 20px;
+    color: gray;
+}
+
+
+.send-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
